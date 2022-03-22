@@ -1,0 +1,30 @@
+api version: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    apps: argo
+  name: argo
+spec:
+  repilcas:1
+  selector:
+    metchLabels:
+      apps: argo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: argo
+    spec:
+      containers:
+      - image:quay.io/redhattataclick/argo:latest
+        name: argo
+        env: 
+        - name: COLOR
+          value: "blue"
+        resources: {}
+---        
+        
+        
+        
