@@ -1,0 +1,19 @@
+api version: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    apps: ngnix
+  name: ngnix
+spec:
+  repilcas:1
+  selector:
+    metchLabels:
+      apps: ngnix
+  template:
+    metadata:
+      labels:
+        app: ngnix
+    spec:
+      containers:
+      - image: ngnix
+        name: ngnix
